@@ -22,6 +22,10 @@
   
 	% remove indent
   \parindent=0in
+  
+	% create new paragraph command to add new line after header
+  \newcommand{\paragraphnewline}[1]{\paragraph{#1}\mbox{}\\}
+  
   % Create custom font title of document
   % note the use of:
   %% \textcolor in the title itself
@@ -51,6 +55,6 @@
 \lipsum[2]
 \subsubsection{Subsubsection Header}
 \lipsum[3]
-\paragraph{Paragraph Header}
+\paragraphnewline{Paragraph Header}
 \lipsum[4]
 \end{document}
