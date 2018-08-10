@@ -1,21 +1,21 @@
 \documentclass[12pt]{article}
 \usepackage[table]{xcolor}       % controls color of text, including headers
-\usepackage[T1]{fontenc}         % controls font enconding
+\usepackage{roboto} % sans serif font for headers
 \usepackage{crimson}              % serif font
-\usepackage[sfdefault]{roboto} % sans serif font for headers
+\usepackage[T1]{fontenc}         % controls font enconding
 \usepackage{sectsty}                % Allows for different fonts for header and body
 \usepackage{lipsum}
   %sectsty commands
   % all section headers use the same sans serif family - roboto
-  \allsectionsfont{\sffamily\selectfont\mdseries\bfseries}
+  \allsectionsfont{\sffamily\selectfont\roboto\mdseries\bfseries}
   % Set size and color of section header AL's H1
-  \sectionfont{\LARGE\nohang\centering\textcolor[cmyk]{0.90, 0.54, 0.28, 0.12}}
+  \sectionfont{\roboto\LARGE\nohang\centering\textcolor[cmyk]{0.90, 0.54, 0.28, 0.12}}
     % Set size and color of subsection header AL's H2
-  \subsectionfont{\fontsize{18pt}{20pt}\selectfont\nohang\centering\textcolor[cmyk]{0.90, 0.54, 0.28, 0.12}}
+  \subsectionfont{\fontsize{18pt}{20pt}\selectfont\roboto\nohang\centering\textcolor[cmyk]{0.90, 0.54, 0.28, 0.12}}
     % Set size and color of subsubsection header AL's H3
-  \subsubsectionfont{\hspace{0pt}\nohang\fontsize{16pt}{18pt}\selectfont\raggedright\textcolor[cmyk]{0.50, 0.05, 0.0, 0.40}}
+  \subsubsectionfont{\hspace{0pt}\nohang\fontsize{16pt}{18pt}\selectfont\roboto\raggedright\textcolor[cmyk]{0.50, 0.05, 0.0, 0.40}}
     % Set size and color of paragraph header AL's H4
-  \paragraphfont{\fontsize{14pt}{16pt}\selectfont\textcolor[cmyk]{0.50, 0.05, 0.0, 0.40}}
+  \paragraphfont{\fontsize{14pt}{16pt}\selectfont\roboto\textcolor[cmyk]{0.50, 0.05, 0.0, 0.40}}
   
   %ditch section numbers
   \setcounter{secnumdepth}{0}
@@ -39,15 +39,12 @@
       }%
       \xpretocmd{\maketitle}{\TitlePageFont}{}{}
 \title{\textcolor[cmyk]{1.00,0.83,0.41,0.36}{Example NWFSC Tech Memo Font SetUp}}
-\author{Jason E. Jannot\footnote{jason.jannot@noaa.gov}}
+\author{Chantel Wetzel, Erin Steiner, Jason E. Jannot\footnote{jason.jannot@noaa.gov}}
  
 \begin{document}
 \maketitle
- % Set base font as serif
-\fontfamily{crimson}\selectfont
-% return the text to 12 point font - otherwise you end up with 22 point font!
-\normalsize
-
+\normalfont % this sets the main font to crimson
+\normalsize %% return the text to 12 point font - otherwise you end up with 22 point font!
 
 \section{Section Header}
 \lipsum[1]
@@ -57,4 +54,5 @@
 \lipsum[3]
 \paragraphnewline{Paragraph Header}
 \lipsum[4]
+
 \end{document}
