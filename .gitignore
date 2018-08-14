@@ -2,3 +2,8 @@
 *.synctex
 *.log
 *.aux
+.Rproj.user
+
+*.Rproj
+
+*.gz
