@@ -7,3 +7,13 @@
 *.Rproj
 
 *.gz
+
+\.Rhistory
+
+*.lof
+
+*.out
+
+*.toc
+
+*.upa
