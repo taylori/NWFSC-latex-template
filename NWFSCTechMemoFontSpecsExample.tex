@@ -19,20 +19,29 @@
     % Set size and color of subsubsection header AL's H3
   \subsubsectionfont{\hspace{0pt}\nohang\fontsize{16pt}{18pt}\selectfont\roboto\raggedright\textcolor[cmyk]{0.50, 0.05, 0.0, 0.40}}
     % Set size and color of paragraph header AL's H4
-  \paragraphfont{\fontsize{14pt}{16pt}\selectfont\robotocondensed\fontseries{bl}\selectfont\textcolor[cmyk]{0.50, 0.05, 0.0, 0.40}}
+    \paragraphfont{\fontsize{14pt}{16pt}\selectfont\robotocondensed\fontseries{bl}\selectfont\textcolor[cmyk]{0.50, 0.05, 0.0, 0.40}}
   
   %ditch section numbers
-  \setcounter{secnumdepth}{0}
+    \setcounter{secnumdepth}{0}
   
 	% remove indent
-  \parindent=0in
+    \parindent=0in
   
 	% create new paragraph command to add new line after header
-  \newcommand{\paragraphnewline}[1]{\paragraph{#1}\mbox{}\\}
+    \newcommand{\paragraphnewline}[1]{\paragraph{#1}\mbox{}\\}
 	
   % footnote settings
-\renewcommand{\footnoterule}{\rule{2in}{.5pt}}
-\renewcommand{\thefootnote}{\arabic{footnote} }% space added as per Al's request
+    \renewcommand{\footnoterule}{\rule{2in}{.5pt}}
+    \renewcommand{\thefootnote}{\arabic{footnote} }% space added as per Al's request
+    
+   %Ensure font in tables matches body font
+    \makeatletter
+      	\renewenvironment{table}%
+  	    {\renewcommand{\familydefault}{\sfdefault}\selectfont
+ 	      \@float{table}}
+  	    {\end@float}
+    \makeatother
+
 
 
 %%The following sets up how the pdf displays links and functions in Acrobat.
